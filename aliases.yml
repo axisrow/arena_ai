@@ -1,0 +1,5 @@
+# Manual overrides: Arena model name (as shown on the leaderboard) -> OpenRouter model id (without :suffix).
+# Use this for pairs the automatic matcher misses; see the "unmatched" report printed by `arena-catalog-build`.
+# Example:
+# "GPT-5.2 Chat (20260210)": openai/gpt-5.2-chat
+{}

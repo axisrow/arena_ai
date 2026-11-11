@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arena × OpenRouter model catalog</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Arena × OpenRouter model catalog</h1>
+  <p id="meta"></p>
+</header>
+<section id="filters">
+  <label>Search <input id="q" type="search" placeholder="name, org, id…"></label>
+  <label>Elo category <select id="cat"></select></label>
+  <label>Min Elo <input id="minElo" type="number" step="10" placeholder="e.g. 1400"></label>
+  <label>Organization <select id="org" multiple size="4"></select></label>
+  <label>License <select id="open">
+    <option value="">any</option><option value="open">open weights / open license</option><option value="closed">proprietary</option></select></label>
+  <label>Sources <select id="src">
+    <option value="">all</option><option value="both">in both (Arena + OpenRouter)</option>
+    <option value="arena">Arena only</option><option value="or">OpenRouter only</option></select></label>
+  <label>Released from <input id="from" type="date"></label>
+  <label>Released to <input id="to" type="date"></label>
+  <label>Max input $/M <input id="maxIn" type="number" step="any" min="0"></label>
+  <label>Max output $/M <input id="maxOut" type="number" step="any" min="0"></label>
+  <label>Min context (K tokens) <input id="minCtx" type="number" step="1" min="0"></label>
+  <label>Input modality <select id="mod"><option value="">any</option></select></label>
+  <label>Supports param <select id="param"><option value="">any</option></select></label>
+  <label class="chk"><input id="oneVariant" type="checkbox"> best variant per model</label>
+  <button id="reset" type="button">Reset</button>
+</section>
+<p id="count"></p>
+<div id="wrap"><table id="tbl"><thead></thead><tbody></tbody></table></div>
+<footer>
+  Data: <a href="https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset">lmarena-ai/leaderboard-dataset</a> (Arena) ·
+  <a href="https://openrouter.ai/docs/api-reference/list-available-models">OpenRouter API</a>.
+  Release date = date in the Arena model name, otherwise the OpenRouter listing date (shown in the tooltip); empty if unknown.
+  Elo = Arena rating for the selected category (hover for the 95% CI); Rank and Votes refer to the same category.
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
