@@ -1,0 +1,20 @@
+[project]
+name = "arena-catalog"
+version = "0.1.0"
+description = "Merge the Arena (ex-LMArena) leaderboard with the OpenRouter model catalog"
+requires-python = ">=3.11"
+dependencies = ["httpx", "pandas", "pyarrow", "rapidfuzz", "python-dotenv", "pyyaml"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
